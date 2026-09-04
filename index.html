@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5eee4">
+  <meta name="description" content="Undangan Pernikahan Ananda Riski Fahrudin & Ningrum Wulandari">
+  <title>The Wedding of Ananda & Ningrum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="opening" class="opening">
+    <div class="opening-overlay"></div>
+    <div class="opening-content">
+      <p class="eyebrow">THE WEDDING OF</p>
+      <h1>Ananda <span>&amp;</span> Ningrum</h1>
+      <p class="date">13 SEPTEMBER 2026</p>
+      <p class="guest-label">Kepada Yth.<br><strong id="guestName">Bapak/Ibu/Saudara/i</strong></p>
+      <button id="openInvitation" class="gold-btn">BUKA UNDANGAN</button>
+    </div>
+  </div>
+
+  <audio id="music" loop preload="none">
+    <source src="music/pujaningsih.mp3" type="audio/mpeg">
+  </audio>
+  <button id="musicToggle" class="music-toggle" aria-label="Putar atau jeda musik">♫</button>
+
+  <main id="mainContent" class="hidden">
+
+    <section class="hero section">
+      <div class="hero-photo"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">THE WEDDING OF</p>
+        <h1>Ananda <span>&amp;</span> Ningrum</h1>
+        <p class="date">MINGGU, 13 SEPTEMBER 2026</p>
+        <div class="ornament">✦</div>
+      </div>
+    </section>
+
+    <section class="intro section paper">
+      <div class="container reveal">
+        <p class="eyebrow">ASSALAMU'ALAIKUM WR. WB.</p>
+        <h2>Dengan penuh kebahagiaan</h2>
+        <p class="lead">
+          Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan
+          doa restu pada hari bahagia pernikahan kami.
+        </p>
+        <div class="jawa-line"></div>
+      </div>
+    </section>
+
+    <section class="couple section beige">
+      <div class="container">
+        <p class="eyebrow reveal">THE COUPLE</p>
+        <h2 class="section-title reveal">Mempelai</h2>
+        <div class="couple-grid">
+          <article class="person reveal">
+            <div class="portrait placeholder"><img src="images/groom.jpg" alt="Ananda Riski Fahrudin"></div>
+            <h3>Ananda Riski Fahrudin, S.Psi.</h3>
+            <p>Putra dari<br><strong>Bapak SARJUDI GHONI R</strong><br>&amp;<br><strong>Ibu SARWATI</strong></p>
+          </article>
+          <div class="ampersand reveal">&amp;</div>
+          <article class="person reveal">
+            <div class="portrait placeholder"><img src="images/bride.jpg" alt="Ningrum Wulandari"></div>
+            <h3>Ningrum Wulandari</h3>
+            <p>Putri dari<br><strong>Bapak KASINO</strong><br>&amp;<br><strong>Ibu SUSANTI</strong></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story section paper">
+      <div class="container narrow">
+        <p class="eyebrow reveal">OUR STORY</p>
+        <h2 class="section-title reveal">A Journey to Forever</h2>
+        <div class="timeline">
+          <article class="timeline-item reveal"><span>2018</span><h3>First Meeting</h3><p>Pertemuan pertama menjadi awal dari sebuah perjalanan yang tidak pernah kami sangka.</p></article>
+          <article class="timeline-item reveal"><span>25 NOVEMBER 2018</span><h3>We Started</h3><p>Dari kesamaan hobi musik dan gitar, kedekatan kami tumbuh menjadi sebuah hubungan.</p></article>
+          <article class="timeline-item reveal"><span>23 MEI 2026</span><h3>Engagement</h3><p>Kami memantapkan langkah untuk melanjutkan perjalanan bersama menuju kehidupan baru.</p></article>
+          <article class="timeline-item reveal"><span>13 SEPTEMBER 2026</span><h3>Wedding Day</h3><p>Hari ketika dua hati dipersatukan dalam sebuah janji untuk berjalan bersama selamanya.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown section beige">
+      <div class="container reveal">
+        <p class="eyebrow">COUNTING DOWN TO</p>
+        <h2 class="section-title">Our Wedding Day</h2>
+        <div class="count-grid">
+          <div><strong id="days">00</strong><span>Hari</span></div>
+          <div><strong id="hours">00</strong><span>Jam</span></div>
+          <div><strong id="minutes">00</strong><span>Menit</span></div>
+          <div><strong id="seconds">00</strong><span>Detik</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="events section paper">
+      <div class="container">
+        <p class="eyebrow reveal">SAVE THE DATE</p>
+        <h2 class="section-title reveal">The Wedding Day</h2>
+        <div class="event-grid">
+          <article class="event-card reveal">
+            <div class="event-icon">✦</div>
+            <h3>AKAD NIKAH</h3>
+            <p class="event-date">Minggu, 13 September 2026</p>
+            <p>09.00 WIB – selesai</p>
+            <p class="address">Barepan RT 02/03, Jagan, Bendosari</p>
+            <a class="outline-btn" href="https://maps.app.goo.gl/m2yaUZsbFvFB8Tdw8?g_st=ac" target="_blank" rel="noopener">LIHAT LOKASI</a>
+          </article>
+          <article class="event-card reveal">
+            <div class="event-icon">✦</div>
+            <h3>RESEPSI</h3>
+            <p class="event-date">Minggu, 13 September 2026</p>
+            <p>13.00 WIB – selesai</p>
+            <p class="address">Barepan RT 02/03, Jagan, Bendosari</p>
+            <a class="outline-btn" href="https://maps.app.goo.gl/m2yaUZsbFvFB8Tdw8?g_st=ac" target="_blank" rel="noopener">LIHAT LOKASI</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ngunduh section beige">
+      <div class="container reveal">
+        <p class="eyebrow">NGUNDUH MANTU</p>
+        <h2 class="section-title">A New Chapter</h2>
+        <p class="event-date">Senin, 14 September 2026</p>
+        <p class="address">Jatisobo RT 03/06, Polokarto, Sukoharjo</p>
+        <a class="outline-btn" href="https://maps.app.goo.gl/uasef2Y7esbs7mVt8?g_st=ac" target="_blank" rel="noopener">LIHAT LOKASI</a>
+      </div>
+    </section>
+
+    <section class="gallery section paper">
+      <div class="container">
+        <p class="eyebrow reveal">OUR MOMENTS</p>
+        <h2 class="section-title reveal">Gallery</h2>
+        <div class="gallery-grid">
+          <img class="reveal" src="images/gallery-1.jpg" alt="Our moment 1">
+          <img class="reveal" src="images/gallery-2.jpg" alt="Our moment 2">
+          <img class="reveal" src="images/gallery-3.jpg" alt="Our moment 3">
+          <img class="reveal" src="images/gallery-4.jpg" alt="Our moment 4">
+          <img class="reveal" src="images/gallery-5.jpg" alt="Our moment 5">
+          <img class="reveal" src="images/gallery-6.jpg" alt="Our moment 6">
+        </div>
+      </div>
+    </section>
+
+    <section class="rsvp section beige">
+      <div class="container narrow reveal">
+        <p class="eyebrow">RSVP</p>
+        <h2 class="section-title">Konfirmasi Kehadiran</h2>
+        <p class="lead">Mohon konfirmasi kehadiran Anda melalui formulir berikut.</p>
+        <form id="rsvpForm">
+          <label>Nama<input id="rsvpName" required type="text" placeholder="Nama Anda"></label>
+          <label>Kehadiran<select id="attendance" required><option value="">Pilih</option><option>Hadir</option><option>Tidak dapat hadir</option></select></label>
+          <label>Ucapan<input id="message" type="text" placeholder="Tulis ucapan dan doa"></label>
+          <button class="gold-btn" type="submit">KIRIM KONFIRMASI</button>
+        </form>
+        <p id="rsvpStatus" class="form-status"></p>
+      </div>
+    </section>
+
+    <section class="gift section paper">
+      <div class="container narrow reveal">
+        <p class="eyebrow">WEDDING GIFT</p>
+        <h2 class="section-title">Tanda Kasih</h2>
+        <p class="lead">Doa dan kehadiran Anda merupakan hadiah terindah bagi kami. Bagi yang ingin memberikan tanda kasih, dapat melalui:</p>
+        <div class="gift-card">
+          <p class="bank">BANK BCA</p>
+          <h3>8265305101</h3>
+          <p>a.n. NINGRUM WULANDARI</p>
+          <button class="outline-btn" data-copy="8265305101">SALIN NOMOR</button>
+          <hr style="border:0;border-top:1px solid var(--line);margin:25px 0">
+          <p class="bank">BANK BCA</p>
+          <h3>8265250196</h3>
+          <p>a.n. ANANDA RISKI FAHRUDIN</p>
+          <button class="outline-btn" data-copy="8265250196">SALIN NOMOR</button>
+        </div>
+        <div class="gift-card">
+          <p class="bank">DANA</p>
+          <h3>082135254315</h3>
+          <p>a.n. ANANDA RISKI FAHRUDIN</p>
+          <button class="outline-btn" data-copy="082135254315">SALIN NOMOR</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="guestbook section beige">
+      <div class="container narrow reveal">
+        <p class="eyebrow">GUESTBOOK</p>
+        <h2 class="section-title">Ucapan &amp; Doa</h2>
+        <form id="guestbookForm">
+          <label>Nama<input id="guestNameInput" required type="text" placeholder="Nama Anda"></label>
+          <label>Pesan<textarea id="guestMessage" required rows="4" placeholder="Tuliskan doa dan ucapan..."></textarea></label>
+          <button class="gold-btn" type="submit">TULIS UCAPAN</button>
+        </form>
+        <div id="guestMessages" class="guest-messages"></div>
+      </div>
+    </section>
+
+    <section class="closing section">
+      <div class="closing-photo"></div>
+      <div class="hero-overlay"></div>
+      <div class="closing-content reveal">
+        <p class="eyebrow">THANK YOU</p>
+        <h2>Terima kasih atas doa<br>&amp; restu Anda.</h2>
+        <p>ANANDA &amp; NINGRUM</p>
+        <div class="ornament">✦</div>
+        <p>13 • 09 • 2026</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
