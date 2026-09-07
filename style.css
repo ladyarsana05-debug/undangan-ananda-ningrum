@@ -190,17 +190,10 @@ OPENING
     position:fixed;
     inset:0;
     z-index:100;
-
-    background-color:#f7f1e8;
-    background-image:url("cover.jpg");
-    background-position:center top;
-    background-repeat:no-repeat;
-    background-size:contain;
-
+    background:#f7f1e8;
     display:grid;
     place-items:center;
-
-    color:white;
+    color:var(--brown);
     text-align:center;
 }
 
