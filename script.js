@@ -1,122 +1,90 @@
-document.addEventListener("DOMContentLoaded", function () {
+const openBtn = document.getElementById("openBtn");
+const opening = document.getElementById("opening");
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
 
 
-    /* =========================
-       BUKA UNDANGAN
-    ========================= */
+/* =========================
+BUKA UNDANGAN
+========================= */
 
-    const openBtn =
-        document.getElementById("openBtn");
+if (openBtn) {
 
-    const opening =
-        document.getElementById("opening");
+    openBtn.addEventListener("click", function () {
 
+        /* Hilangkan cover */
 
-    if (openBtn && opening) {
+        if (opening) {
 
-        openBtn.addEventListener(
-            "click",
-            function () {
+            opening.classList.add("hide");
 
-                /* Hilangkan cover */
+            setTimeout(function () {
 
-                opening.style.opacity = "0";
+                opening.style.display = "none";
+                document.body.classList.remove("locked");
 
-                opening.style.transition =
-                    "opacity 0.6s ease";
+            }, 700);
 
-
-                setTimeout(function () {
-
-                    opening.style.display =
-                        "none";
-
-                    document.body.classList.remove(
-                        "locked"
-                    );
-
-                }, 600);
+        }
 
 
-                /* Putar musik */
+        /* PUTAR MUSIK */
 
-                const music =
-                    document.getElementById(
-                        "music"
-                    );
+        if (music) {
 
-                const musicBtn =
-                    document.getElementById(
-                        "musicBtn"
-                    );
+            music.volume = 0.7;
 
+            music.play()
+                .then(function () {
 
-                if (music) {
+                    console.log("Musik berhasil diputar");
 
-                    music.play()
-                        .then(function () {
+                    if (musicBtn) {
+                        musicBtn.style.display = "flex";
+                        musicBtn.innerHTML = "♫";
+                    }
 
-                            if (musicBtn) {
+                })
+                .catch(function (error) {
 
-                                musicBtn.style.display =
-                                    "block";
+                    console.log("Musik gagal diputar:", error);
 
-                            }
+                });
 
-                        })
-                        .catch(function () {
+        }
 
-                            console.log(
-                                "Musik belum dapat diputar."
-                            );
+    });
 
-                        });
-
-                }
-
-            }
-
-        );
-
-    }
+}
 
 
-    /* =========================
-       MUSIC BUTTON
-    ========================= */
+/* =========================
+TOMBOL MUSIK
+========================= */
 
-    const music =
-        document.getElementById("music");
+if (musicBtn && music) {
 
-    const musicBtn =
-        document.getElementById("musicBtn");
+    musicBtn.addEventListener("click", function () {
 
+        if (music.paused) {
 
-    if (musicBtn && music) {
+            music.play();
 
-        musicBtn.addEventListener(
-            "click",
-            function () {
+            musicBtn.innerHTML = "♫";
+            musicBtn.classList.remove("paused");
 
-                if (music.paused) {
+        } else {
 
-                    music.play();
+            music.pause();
 
-                    musicBtn.innerHTML = "♫";
+            musicBtn.innerHTML = "🔇";
+            musicBtn.classList.add("paused");
 
-                } else {
+        }
 
-                    music.pause();
+    });
 
-                    musicBtn.innerHTML = "🔇";
-
-                }
-
-            }
-
-        );
-
-    }
+}
 
 
     /* =========================
