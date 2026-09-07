@@ -187,16 +187,21 @@ OPENING
 ===================== */
 
 .opening{
-position:fixed;
-inset:0;
-z-index:100;
-background:
-linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.45)),
-url("cover.jpg") center/cover no-repeat;
-display:grid;
-place-items:center;
-color:white;
-text-align:center;
+    position:fixed;
+    inset:0;
+    z-index:100;
+
+    background-color:#f7f1e8;
+    background-image:url("cover.jpg");
+    background-position:center top;
+    background-repeat:no-repeat;
+    background-size:contain;
+
+    display:grid;
+    place-items:center;
+
+    color:white;
+    text-align:center;
 }
 
 .opening-content{
