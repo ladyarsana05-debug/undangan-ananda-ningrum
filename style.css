@@ -325,177 +325,127 @@ OUTLINE BUTTON
 }
 
 
-/* =====================================
-COVER PEMBUKA
-BACKGROUND WARNA - TANPA FOTO
-===================================== */
+/* =========================
+OPENING COVER
+========================= */
 
 .opening{
-
     position:fixed;
-
     inset:0;
-
     z-index:9999;
 
-    background:
-
-    linear-gradient(
-        135deg,
-        #f7f1e8,
-        #ece1d2,
-        #f7f1e8
-    );
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
+    background:
+    linear-gradient(
+        135deg,
+        #55483e,
+        #7b654e,
+        #b89a63
+    );
+
+    color:white;
     text-align:center;
 
-    color:var(--brown);
-
-    transition:
-
-    opacity .5s ease;
-
+    transition:opacity .6s ease;
 }
 
+/* OVERLAY TIDAK BOLEH MENUTUP TOMBOL */
+.opening-overlay{
+    position:absolute;
+    inset:0;
 
-/* CONTENT COVER */
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(255,255,255,.08),
+        transparent 60%
+    );
+
+    pointer-events:none;
+}
 
 .opening-content{
+    position:relative;
+    z-index:2;
 
-    width:min(650px,90%);
+    width:90%;
+    max-width:600px;
 
-    padding:
-
-    40px 20px;
-
+    padding:30px;
 }
 
+.opening h1{
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:clamp(3rem,10vw,5.5rem);
 
-/* EYEBROW */
+    font-weight:500;
 
-.opening .eyebrow{
+    margin:25px 0;
 
-    color:var(--gold);
-
-    margin-bottom:20px;
-
+    line-height:1;
 }
-
-
-/* ORNAMEN */
-
-.opening-ornament{
-
-    color:var(--gold);
-
-    font-size:1.4rem;
-
-    margin-bottom:35px;
-
-}
-
-
-/* KEPADA YTH */
-
-.guest-label{
-
-    font-size:.7rem;
-
-    letter-spacing:.20em;
-
-    color:#8c7655;
-
-    margin-bottom:5px;
-
-}
-
-
-/* NAMA TAMU */
-
-#guestName{
-
-    font-size:
-
-    clamp(
-        1.8rem,
-        7vw,
-        2.6rem
-    );
-
-    margin-bottom:30px;
-
-}
-
-
-/* GARIS */
-
-.opening-line{
-
-    width:90px;
-
-    height:1px;
-
-    background:var(--gold);
-
-    margin:20px auto 30px;
-
-}
-
-
-/* NAMA PENGANTIN */
-
-.opening-name{
-
-    font-size:
-
-    clamp(
-        3rem,
-        11vw,
-        5.5rem
-    );
-
-    line-height:1.1;
-
-    color:var(--brown);
-
-    margin-bottom:30px;
-
-}
-
-
-.opening-name span{
-
-    display:block;
-
-    font-size:.7em;
-
-    color:var(--gold);
-
-    margin:
-
-    12px 0;
-
-}
-
-
-/* TANGGAL */
 
 .opening-date{
+    letter-spacing:.2em;
+    font-size:.8rem;
+
+    margin-bottom:30px;
+}
+
+.guest-label{
+    margin-top:30px;
+
+    font-size:.7rem;
+    letter-spacing:.15em;
+}
+
+#guestName{
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:1.8rem;
+
+    margin-top:8px;
+}
+
+.gold-text{
+    color:#e5c27f;
+}
+
+/* TOMBOL */
+.gold-btn{
+    position:relative;
+    z-index:10;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:30px;
+
+    background:#b89a63;
+
+    color:white;
+
+    font-family:Montserrat, sans-serif;
 
     font-size:.7rem;
 
-    letter-spacing:.25em;
+    letter-spacing:.12em;
 
-    color:#8c7655;
+    cursor:pointer;
 
-    margin-bottom:38px;
+    pointer-events:auto;
 
+    transition:.3s;
+}
+
+.gold-btn:hover{
+    transform:scale(1.05);
+
+    background:#c9aa70;
 }
 
 
