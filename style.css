@@ -1482,3 +1482,46 @@ MOBILE
 
 
 }
+/* PERBAIKAN TOMBOL BUKA UNDANGAN */
+
+.opening {
+    position: fixed !important;
+    inset: 0 !important;
+
+    z-index: 9999 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: linear-gradient(
+        135deg,
+        #55483e,
+        #7b654e,
+        #b89a63
+    ) !important;
+
+    pointer-events: auto !important;
+}
+
+.opening-content {
+    position: relative !important;
+
+    z-index: 10000 !important;
+
+    text-align: center !important;
+
+    pointer-events: auto !important;
+}
+
+#openBtn {
+    position: relative !important;
+
+    z-index: 10001 !important;
+
+    pointer-events: auto !important;
+
+    cursor: pointer !important;
+
+    touch-action: manipulation !important;
+}
