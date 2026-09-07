@@ -1,63 +1,37 @@
-const openBtn = document.getElementById("openBtn");
-const opening = document.getElementById("opening");
 const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
 
 /* =========================
-BUKA UNDANGAN
+MUSIC
 ========================= */
 
-openBtn.addEventListener("click", function () {
+if (music && musicBtn) {
 
-    opening.style.opacity = "0";
+    musicBtn.style.display = "block";
 
-    setTimeout(function () {
+    musicBtn.addEventListener("click", function () {
 
-        opening.style.display = "none";
+        if (music.paused) {
 
-        document.body.classList.remove("locked");
+            music.play()
+                .then(() => {
+                    musicBtn.innerHTML = "♫";
+                })
+                .catch((error) => {
+                    console.log("Musik tidak dapat diputar:", error);
+                });
 
-    }, 500);
+        } else {
 
+            music.pause();
 
-    /* PUTAR MUSIK */
+            musicBtn.innerHTML = "🔇";
 
-    music.play()
-        .then(() => {
+        }
 
-            musicBtn.style.display = "block";
+    });
 
-        })
-        .catch(() => {
-
-            console.log("Musik tidak dapat diputar otomatis");
-
-        });
-
-});
-
-
-/* =========================
-MUSIC BUTTON
-========================= */
-
-musicBtn.addEventListener("click", function () {
-
-    if (music.paused) {
-
-        music.play();
-
-        musicBtn.innerHTML = "♫";
-
-    } else {
-
-        music.pause();
-
-        musicBtn.innerHTML = "🔇";
-
-    }
-
-});
+}
 
 
 /* =========================
@@ -66,12 +40,11 @@ COUNTDOWN
 
 const weddingDate = new Date("September 13, 2026 09:00:00").getTime();
 
-setInterval(function () {
+function updateCountdown() {
 
     const now = new Date().getTime();
 
     const distance = weddingDate - now;
-
 
     if (distance < 0) {
 
@@ -81,9 +54,7 @@ setInterval(function () {
         document.getElementById("seconds").innerHTML = "00";
 
         return;
-
     }
-
 
     const days = Math.floor(
         distance / (1000 * 60 * 60 * 24)
@@ -104,7 +75,6 @@ setInterval(function () {
         1000
     );
 
-
     document.getElementById("days").innerHTML =
         String(days).padStart(2, "0");
 
@@ -117,8 +87,11 @@ setInterval(function () {
     document.getElementById("seconds").innerHTML =
         String(seconds).padStart(2, "0");
 
+}
 
-}, 1000);
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
 
 
 /* =========================
@@ -156,9 +129,13 @@ COPY REKENING
 
 function copyText(text) {
 
-    navigator.clipboard.writeText(text);
-
-    alert("Nomor berhasil disalin!");
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert("Nomor berhasil disalin!");
+        })
+        .catch(() => {
+            alert("Gagal menyalin nomor.");
+        });
 
 }
 
@@ -216,7 +193,14 @@ const guest =
 
 if (guest) {
 
-    document.getElementById("guestName").innerHTML =
-        guest.replace(/\+/g, " ");
+    const guestName =
+        document.getElementById("guestName");
+
+    if (guestName) {
+
+        guestName.innerHTML =
+            guest.replace(/\+/g, " ");
+
+    }
 
 }
