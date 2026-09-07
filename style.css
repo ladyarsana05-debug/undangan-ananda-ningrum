@@ -1,16 +1,16 @@
 /* =========================
-RESET
+   RESET
 ========================= */
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 
 /* =========================
-VARIABLE
+   VARIABLE WARNA
 ========================= */
 
 :root{
@@ -21,17 +21,17 @@ VARIABLE
 
     --brown:#55483e;
 
-    --gold:#b89a63;
-
     --dark:#302a25;
 
-    --line:rgba(85,72,62,.20);
+    --gold:#b89a63;
+
+    --line:rgba(85,72,62,.18);
 
 }
 
 
 /* =========================
-BODY
+   DASAR
 ========================= */
 
 html{
@@ -41,14 +41,11 @@ html{
 
 body{
 
-    font-family:
-    "Montserrat",
-    Arial,
-    sans-serif;
-
-    color:var(--brown);
+    font-family:"Montserrat",Arial,sans-serif;
 
     background:var(--ivory);
+
+    color:var(--brown);
 
     line-height:1.8;
 
@@ -62,20 +59,15 @@ body.locked{
 }
 
 
-/* =========================
-TEXT
-========================= */
-
 h1,
 h2,
 h3{
 
-    font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    font-family:"Cormorant Garamond",Georgia,serif;
 
     font-weight:500;
+
+    line-height:1.2;
 
 }
 
@@ -83,7 +75,7 @@ h3{
 button,
 a{
 
-    font:inherit;
+    font-family:inherit;
 
 }
 
@@ -103,12 +95,12 @@ img{
 
 
 /* =========================
-CONTAINER
+   CONTAINER
 ========================= */
 
 .container{
 
-    width:min(1100px,92%);
+    width:min(1100px,90%);
 
     margin:auto;
 
@@ -123,7 +115,7 @@ CONTAINER
 
 
 /* =========================
-BACKGROUND
+   BACKGROUND
 ========================= */
 
 .paper{
@@ -141,62 +133,140 @@ BACKGROUND
 
 
 /* =========================
-SECTION
+   OPENING
 ========================= */
 
-.couple-section,
-.countdown,
-.event-section,
-.gallery,
-.story,
-.gift,
-.rsvp{
+.opening{
 
-    padding:90px 20px;
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #40352d,
+        #715d4b,
+        #b89a63
+    );
+
+    color:white;
+
+}
+
+
+.opening-content{
 
     position:relative;
 
-    overflow:hidden;
+    width:min(600px,90%);
 
-    text-align:center;
+    padding:30px;
+
+}
+
+
+.opening h1{
+
+    font-size:clamp(
+        3.5rem,
+        12vw,
+        6rem
+    );
+
+    margin:25px 0;
+
+}
+
+
+.opening h1 span{
+
+    display:block;
+
+    font-size:.65em;
+
+}
+
+
+.opening-date{
+
+    font-size:.75rem;
+
+    letter-spacing:.18em;
+
+    margin-bottom:30px;
 
 }
 
 
 /* =========================
-EYEBROW
+   TEXT
 ========================= */
 
 .eyebrow{
 
     font-size:.68rem;
 
-    letter-spacing:.30em;
+    letter-spacing:.25em;
 
     text-transform:uppercase;
 
-    margin-bottom:18px;
+    margin-bottom:15px;
 
 }
 
 
-/* =========================
-SECTION TITLE
-========================= */
+.guest-label{
+
+    margin-top:30px;
+
+    font-size:.7rem;
+
+    letter-spacing:.15em;
+
+}
+
+
+#guestName{
+
+    font-size:1.8rem;
+
+    margin-top:5px;
+
+}
+
+
+.gold-text{
+
+    color:#e4c27e;
+
+}
+
 
 .section-title{
 
-    font-size:
-    clamp(2.4rem,7vw,4.4rem);
+    font-size:clamp(
+        2.5rem,
+        7vw,
+        4.5rem
+    );
 
-    margin-bottom:25px;
+    text-align:center;
+
+    margin-bottom:20px;
 
 }
 
-
-/* =========================
-LEAD
-========================= */
 
 .lead{
 
@@ -208,16 +278,18 @@ LEAD
 
     font-weight:300;
 
+    text-align:center;
+
 }
 
 
 /* =========================
-ORNAMENT LINE
+   LINE ORNAMENT
 ========================= */
 
 .jawa-line{
 
-    width:100px;
+    width:90px;
 
     height:1px;
 
@@ -230,7 +302,7 @@ ORNAMENT LINE
 }
 
 
-.jawa-line:after{
+.jawa-line::after{
 
     content:"✦";
 
@@ -240,12 +312,11 @@ ORNAMENT LINE
 
     top:50%;
 
-    transform:
-    translate(-50%,-50%);
+    transform:translate(-50%,-50%);
 
     background:var(--ivory);
 
-    padding:0 12px;
+    padding:0 10px;
 
     color:var(--gold);
 
@@ -253,348 +324,112 @@ ORNAMENT LINE
 
 
 /* =========================
-BUTTON
+   BUTTON
 ========================= */
 
 .gold-btn{
 
-    border:none;
+    position:relative;
 
-    border-radius:50px;
+    z-index:10000;
 
-    padding:17px 35px;
-
-    letter-spacing:.16em;
-
-    font-size:.7rem;
+    border:1px solid var(--gold);
 
     background:var(--gold);
 
     color:white;
 
-    transition:.3s;
-
-}
-
-
-.gold-btn:hover{
-
-    transform:
-    translateY(-2px);
-
-}
-
-
-/* =========================
-OUTLINE BUTTON
-========================= */
-
-.outline-btn{
-
-    display:inline-block;
-
-    border:
-
-    1px solid var(--gold);
-
-    border-radius:40px;
-
-    padding:13px 24px;
-
-    text-decoration:none;
-
-    color:var(--brown);
-
-    letter-spacing:.12em;
-
-    font-size:.65rem;
-
-    margin-top:20px;
-
-    transition:.3s;
-
-}
-
-
-.outline-btn:hover{
-
-    background:var(--gold);
-
-    color:white;
-
-}
-
-
-/* =========================
-OPENING COVER
-========================= */
-
-.opening{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #55483e,
-        #7b654e,
-        #b89a63
-    );
-
-    color:white;
-    text-align:center;
-
-    transition:opacity .6s ease;
-}
-
-/* OVERLAY TIDAK BOLEH MENUTUP TOMBOL */
-.opening-overlay{
-    position:absolute;
-    inset:0;
-
-    background:
-    radial-gradient(
-        circle at center,
-        rgba(255,255,255,.08),
-        transparent 60%
-    );
-
-    pointer-events:none;
-}
-
-.opening-content{
-    position:relative;
-    z-index:2;
-
-    width:90%;
-    max-width:600px;
-
-    padding:30px;
-}
-
-.opening h1{
-    font-family:"Cormorant Garamond", Georgia, serif;
-    font-size:clamp(3rem,10vw,5.5rem);
-
-    font-weight:500;
-
-    margin:25px 0;
-
-    line-height:1;
-}
-
-.opening-date{
-    letter-spacing:.2em;
-    font-size:.8rem;
-
-    margin-bottom:30px;
-}
-
-.guest-label{
-    margin-top:30px;
-
-    font-size:.7rem;
-    letter-spacing:.15em;
-}
-
-#guestName{
-    font-family:"Cormorant Garamond", serif;
-
-    font-size:1.8rem;
-
-    margin-top:8px;
-}
-
-.gold-text{
-    color:#e5c27f;
-}
-
-/* TOMBOL */
-.gold-btn{
-    position:relative;
-    z-index:10;
-
-    border:none;
-
-    padding:15px 30px;
+    padding:15px 28px;
 
     border-radius:30px;
 
-    background:#b89a63;
-
-    color:white;
-
-    font-family:Montserrat, sans-serif;
-
     font-size:.7rem;
 
-    letter-spacing:.12em;
+    letter-spacing:.13em;
 
     cursor:pointer;
 
-    pointer-events:auto;
+    touch-action:manipulation;
 
-    transition:.3s;
-}
-
-.gold-btn:hover{
-    transform:scale(1.05);
-
-    background:#c9aa70;
 }
 
 
-/* =========================
-MUSIC BUTTON
-========================= */
+.gold-btn:active{
 
-#musicBtn{
-
-    position:fixed;
-
-    right:20px;
-
-    bottom:25px;
-
-    z-index:500;
-
-    width:58px;
-
-    height:58px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:var(--gold);
-
-    color:white;
-
-    font-size:1.5rem;
-
-    box-shadow:
-
-    0 8px 25px
-    rgba(0,0,0,.15);
-
-    display:none;
+    transform:scale(.96);
 
 }
 
 
 /* =========================
-HERO
+   HERO
 ========================= */
 
 .hero{
 
-    position:relative;
-
-    min-height:100svh;
+    min-height:100vh;
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
+    align-items:center;
+
     text-align:center;
-
-    color:white;
-
-    background:
-
-    url("cover.jpg")
-
-    center / cover
-
-    no-repeat;
-
-}
-
-
-/* HERO OVERLAY */
-
-.hero-overlay{
-
-    position:absolute;
-
-    inset:0;
 
     background:
 
     linear-gradient(
+        rgba(48,42,37,.65),
+        rgba(48,42,37,.75)
+    ),
 
-        180deg,
+    url("foto1.JPG")
+    center/cover;
 
-        rgba(30,25,20,.35),
+    color:white;
 
-        rgba(30,25,20,.55)
-
-    );
+    padding:40px 20px;
 
 }
 
-
-/* HERO CONTENT */
 
 .hero-content{
 
-    position:relative;
-
-    z-index:2;
+    max-width:900px;
 
 }
 
-
-/* HERO TITLE */
 
 .hero h1{
 
-    font-size:
-
-    clamp(
-        3.2rem,
-        10vw,
-        6rem
+    font-size:clamp(
+        3rem,
+        9vw,
+        6.5rem
     );
 
-    line-height:1.1;
-
-    margin:
-
-    25px auto;
-
-    max-width:850px;
+    margin:20px 0;
 
 }
 
-
-/* AND */
 
 .hero-and{
 
     display:block;
 
-    color:#e2c27d;
+    color:#e4c27e;
 
-    font-size:.8em;
+    font-size:.7em;
 
     margin:10px 0;
 
 }
 
 
-/* HERO DATE */
-
 .hero-date{
 
-    letter-spacing:.25em;
+    letter-spacing:.16em;
 
     font-size:.75rem;
 
@@ -602,43 +437,56 @@ HERO
 
 
 /* =========================
-COUPLE
+   SECTION
 ========================= */
+
+.intro,
+.couple-section,
+.countdown,
+.event-section,
+.gallery,
+.story,
+.gift,
+.rsvp,
+.closing{
+
+    padding:90px 20px;
+
+}
+
+
+/* =========================
+   COUPLE
+========================= */
+
+.couple-section{
+
+    text-align:center;
+
+}
+
 
 .person{
 
-    margin-bottom:50px;
+    margin:55px auto;
 
 }
 
-
-/* PHOTO */
 
 .person-photo{
 
-    width:
+    width:min(340px,100%);
 
-    min(
-        350px,
-        100%
-    );
+    aspect-ratio:3/4;
 
-    aspect-ratio:
-
-    3 / 4;
-
-    margin:
-
-    0 auto 25px;
+    margin:auto;
 
     overflow:hidden;
 
-    background:#ded3c5;
+    border-radius:180px 180px 0 0;
 
 }
 
-
-/* IMAGE */
 
 .person-photo img{
 
@@ -648,83 +496,49 @@ COUPLE
 
     object-fit:cover;
 
-    display:block;
-
 }
 
-
-/* LABEL */
 
 .person-label{
 
+    margin-top:20px;
+
     font-size:.65rem;
 
-    letter-spacing:.25em;
-
-    color:var(--gold);
-
-    margin-bottom:12px;
+    letter-spacing:.2em;
 
 }
 
-
-/* NAME */
 
 .person-name{
 
-    font-size:
+    font-size:2.3rem;
 
-    clamp(
-        2rem,
-        6vw,
-        3rem
-    );
-
-    margin-bottom:15px;
+    margin:10px 0;
 
 }
 
-
-/* PARENT */
 
 .person-parent{
 
     font-size:.85rem;
 
-    font-weight:300;
-
 }
 
-
-.person-parent strong{
-
-    font-weight:500;
-
-}
-
-
-/* AMPERSAND */
 
 .ampersand{
 
-    font-family:
-
-    "Cormorant Garamond",
-    serif;
+    font-family:"Cormorant Garamond",serif;
 
     font-size:4rem;
 
     color:var(--gold);
 
-    margin:
-
-    0 0 45px;
-
 }
 
 
 /* =========================
-COUNTDOWN
+   COUNTDOWN
 ========================= */
 
 .countdown{
@@ -734,70 +548,58 @@ COUNTDOWN
 }
 
 
-#countdown{
+.count-grid{
 
     display:grid;
 
     grid-template-columns:
-
     repeat(4,1fr);
 
     gap:10px;
 
     max-width:700px;
 
-    margin:
-
-    35px auto 0;
+    margin:35px auto 0;
 
 }
 
 
-#countdown div{
+.count-grid div{
 
-    border:
+    border:1px solid var(--line);
 
-    1px solid var(--line);
-
-    padding:
-
-    20px 5px;
-
-    background:
-
-    rgba(255,255,255,.2);
+    padding:20px 5px;
 
 }
 
 
-#countdown b{
+.count-grid strong{
 
     display:block;
 
     font-family:
+    "Cormorant Garamond",serif;
 
-    "Cormorant Garamond";
-
-    font-size:3rem;
+    font-size:2.8rem;
 
     font-weight:500;
 
 }
 
 
-#countdown span{
+.count-grid span{
 
     font-size:.6rem;
 
-    letter-spacing:.08em;
-
     text-transform:uppercase;
+
+    letter-spacing:.1em;
 
 }
 
 
 /* =========================
-EVENT
+   EVENT
 ========================= */
 
 .event-section{
@@ -809,19 +611,14 @@ EVENT
 
 .event-card{
 
-    border:
+    border:1px solid var(--line);
 
-    1px solid var(--line);
+    padding:40px 25px;
 
-    padding:
-
-    40px 25px;
-
-    margin-bottom:20px;
+    margin-top:30px;
 
     background:
-
-    rgba(255,255,255,.25);
+    rgba(255,255,255,.2);
 
 }
 
@@ -830,26 +627,18 @@ EVENT
 
     color:var(--gold);
 
-    letter-spacing:.25em;
-
     font-size:.7rem;
 
-    margin-bottom:10px;
+    letter-spacing:.3em;
 
 }
 
 
 .event-card h3{
 
-    font-size:
+    font-size:2.4rem;
 
-    clamp(
-        2rem,
-        6vw,
-        3rem
-    );
-
-    margin-bottom:30px;
+    margin:10px 0 30px;
 
 }
 
@@ -858,15 +647,11 @@ EVENT
 
     display:flex;
 
-    align-items:flex-start;
-
     gap:15px;
 
     text-align:left;
 
-    margin:
-
-    25px 0;
+    margin:25px 0;
 
 }
 
@@ -878,52 +663,68 @@ EVENT
 }
 
 
-.event-detail strong{
-
-    font-size:.9rem;
-
-}
-
-
 .event-detail p{
 
-    font-size:.8rem;
-
-    font-weight:300;
+    font-size:.82rem;
 
     margin-top:5px;
 
 }
 
 
-/* DIVIDER */
-
 .event-divider{
 
-    font-size:2rem;
+    margin:35px 0;
 
     color:var(--gold);
 
-    margin:
+    font-size:1.5rem;
 
-    35px 0;
+}
+
+
+.outline-btn{
+
+    display:inline-block;
+
+    border:1px solid var(--gold);
+
+    color:var(--brown);
+
+    padding:13px 25px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-size:.7rem;
+
+    letter-spacing:.1em;
+
+    margin-top:15px;
 
 }
 
 
 /* =========================
-GALLERY
+   GALLERY
 ========================= */
+
+.gallery{
+
+    text-align:center;
+
+}
+
 
 .gallery-grid{
 
     display:grid;
 
     grid-template-columns:
+    repeat(2,1fr);
 
-    repeat(3,1fr);
-
-    gap:10px;
+    gap:12px;
 
 }
 
@@ -932,13 +733,9 @@ GALLERY
 
     width:100%;
 
-    aspect-ratio:
-
-    1 / 1.15;
+    aspect-ratio:1/1.2;
 
     object-fit:cover;
-
-    display:block;
 
     cursor:pointer;
 
@@ -946,7 +743,7 @@ GALLERY
 
 
 /* =========================
-LIGHTBOX
+   LIGHTBOX
 ========================= */
 
 #lightbox{
@@ -958,8 +755,7 @@ LIGHTBOX
     z-index:10000;
 
     background:
-
-    rgba(0,0,0,.92);
+    rgba(0,0,0,.9);
 
     display:none;
 
@@ -972,20 +768,11 @@ LIGHTBOX
 }
 
 
-#lightbox.active{
-
-    display:flex;
-
-}
-
-
 #lightbox img{
 
-    max-width:100%;
+    max-width:90%;
 
-    max-height:90vh;
-
-    object-fit:contain;
+    max-height:85vh;
 
 }
 
@@ -994,13 +781,13 @@ LIGHTBOX
 
     position:absolute;
 
-    top:20px;
-
     right:25px;
+
+    top:15px;
 
     color:white;
 
-    font-size:2.5rem;
+    font-size:3rem;
 
     cursor:pointer;
 
@@ -1008,45 +795,23 @@ LIGHTBOX
 
 
 /* =========================
-STORY
+   STORY
 ========================= */
 
-.story-item{
+.story{
 
-    border-left:
-
-    1px solid var(--gold);
-
-    text-align:left;
-
-    padding:
-
-    0 0 35px 30px;
-
-    margin-left:10px;
-
-    position:relative;
+    text-align:center;
 
 }
 
 
-.story-item:before{
+.story-item{
 
-    content:"";
+    padding:30px 20px;
 
-    position:absolute;
+    border-bottom:
 
-    width:11px;
-
-    height:11px;
-
-    background:var(--gold);
-
-    border-radius:50%;
-
-    left:-6px;
-
-    top:8px;
+    1px solid var(--line);
 
 }
 
@@ -1055,9 +820,9 @@ STORY
 
     color:var(--gold);
 
-    letter-spacing:.2em;
-
     font-size:.7rem;
+
+    letter-spacing:.2em;
 
 }
 
@@ -1066,9 +831,7 @@ STORY
 
     font-size:2rem;
 
-    margin:
-
-    8px 0;
+    margin:10px 0;
 
 }
 
@@ -1077,13 +840,11 @@ STORY
 
     font-size:.85rem;
 
-    font-weight:300;
-
 }
 
 
 /* =========================
-WEDDING GIFT
+   GIFT
 ========================= */
 
 .gift{
@@ -1095,23 +856,13 @@ WEDDING GIFT
 
 .bank-card{
 
+    border:1px solid var(--line);
+
+    padding:28px;
+
+    margin:20px auto;
+
     max-width:450px;
-
-    margin:
-
-    25px auto;
-
-    padding:
-
-    30px 20px;
-
-    border:
-
-    1px solid var(--line);
-
-    background:
-
-    rgba(255,255,255,.3);
 
 }
 
@@ -1120,16 +871,14 @@ WEDDING GIFT
 
     font-size:2rem;
 
-    color:var(--gold);
-
 }
 
 
-.bank-card b{
+.bank-card strong{
 
     display:block;
 
-    font-size:1.2rem;
+    font-size:1.1rem;
 
     letter-spacing:.08em;
 
@@ -1138,40 +887,29 @@ WEDDING GIFT
 }
 
 
-.bank-card p{
-
-    font-size:.85rem;
-
-    margin-bottom:20px;
-
-}
-
-
 .bank-card button{
 
-    border:
+    margin-top:15px;
 
-    1px solid var(--gold);
+    padding:10px 20px;
+
+    border:1px solid var(--gold);
 
     background:transparent;
 
     color:var(--brown);
 
-    padding:
-
-    10px 20px;
-
-    border-radius:30px;
-
-    letter-spacing:.1em;
+    border-radius:20px;
 
     font-size:.65rem;
+
+    letter-spacing:.1em;
 
 }
 
 
 /* =========================
-RSVP
+   RSVP
 ========================= */
 
 .rsvp{
@@ -1181,42 +919,32 @@ RSVP
 }
 
 
-/* RSVP BUTTON */
-
 .rsvp-btn{
 
     display:inline-block;
 
-    margin:
-
-    30px auto;
-
-    padding:
-
-    16px 25px;
+    margin-top:30px;
 
     background:var(--gold);
 
     color:white;
 
+    padding:15px 25px;
+
     text-decoration:none;
 
-    border-radius:40px;
-
-    letter-spacing:.1em;
+    border-radius:30px;
 
     font-size:.7rem;
+
+    letter-spacing:.1em;
 
 }
 
 
-/* CONTACT */
-
 .contact-text{
 
-    margin:
-
-    25px 0 15px;
+    margin-top:40px;
 
     font-size:.8rem;
 
@@ -1231,164 +959,100 @@ RSVP
 
     gap:10px;
 
-    align-items:center;
+    margin-top:15px;
 
 }
 
 
 .contact a{
 
-    text-decoration:none;
-
     color:var(--brown);
 
-    border:
+    text-decoration:none;
 
-    1px solid var(--line);
-
-    padding:
-
-    12px 20px;
-
-    border-radius:30px;
-
-    width:
-
-    min(
-        300px,
-        100%
-    );
+    font-size:.85rem;
 
 }
 
 
 /* =========================
-CLOSING
+   CLOSING
 ========================= */
 
 .closing{
 
-    min-height:100svh;
+    text-align:center;
 
-    position:relative;
+    min-height:70vh;
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
-    text-align:center;
-
-    color:white;
-
-    background:
-
-    url("cover.jpg")
-
-    center / cover
-
-    no-repeat;
-
-    padding:
-
-    80px 20px;
-
 }
 
-
-.closing-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    rgba(40,30,20,.65);
-
-}
-
-
-.closing-content{
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-
-.closing h2{
-
-    font-size:
-
-    clamp(
-        2.5rem,
-        7vw,
-        4.5rem
-    );
-
-    margin:
-
-    20px 0;
-
-}
-
-
-.closing .jawa-line:after{
-
-    background:transparent;
-
-}
-
-
-/* CLOSING NAME */
 
 .closing-name{
 
     font-family:
+    "Cormorant Garamond",serif;
 
-    "Cormorant Garamond",
-    serif;
-
-    font-size:
-
-    clamp(
-        2.4rem,
+    font-size:clamp(
+        2.5rem,
         8vw,
-        4.5rem
+        5rem
     );
 
-    line-height:1.2;
-
-    margin-top:30px;
-
-}
-
-
-.closing-name span{
-
-    color:#e2c27d;
+    margin-top:35px;
 
 }
 
 
 /* =========================
-SCROLL ANIMATION
+   MUSIC BUTTON
+========================= */
+
+#musicBtn{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:5000;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:1px solid var(--gold);
+
+    background:var(--ivory);
+
+    color:var(--brown);
+
+    display:none;
+
+}
+
+
+/* =========================
+   ANIMATION
 ========================= */
 
 .reveal{
 
     opacity:0;
 
-    transform:
-
-    translateY(30px);
+    transform:translateY(30px);
 
     transition:
 
     opacity .8s ease,
+
     transform .8s ease;
 
 }
@@ -1398,130 +1062,50 @@ SCROLL ANIMATION
 
     opacity:1;
 
-    transform:
-
-    translateY(0);
+    transform:translateY(0);
 
 }
 
 
 /* =========================
-MOBILE
+   MOBILE
 ========================= */
 
-@media(max-width:700px){
+@media(max-width:600px){
 
-
+    .intro,
     .couple-section,
     .countdown,
     .event-section,
     .gallery,
     .story,
     .gift,
-    .rsvp{
+    .rsvp,
+    .closing{
 
-        padding:
-
-        75px 18px;
-
-    }
-
-
-    .gallery-grid{
-
-        grid-template-columns:
-
-        repeat(2,1fr);
+        padding:75px 18px;
 
     }
 
 
-    #countdown{
+    .count-grid{
 
-        gap:7px;
-
-    }
-
-
-    #countdown div{
-
-        padding:
-
-        15px 3px;
+        gap:6px;
 
     }
 
 
-    #countdown b{
+    .count-grid strong{
 
-        font-size:2.2rem;
-
-    }
-
-
-    .opening-name{
-
-        font-size:
-
-        clamp(
-            2.8rem,
-            13vw,
-            4.5rem
-        );
+        font-size:2rem;
 
     }
 
 
-    .event-card{
+    .count-grid div{
 
-        padding:
-
-        35px 20px;
+        padding:15px 2px;
 
     }
 
-
-}
-/* PERBAIKAN TOMBOL BUKA UNDANGAN */
-
-.opening {
-    position: fixed !important;
-    inset: 0 !important;
-
-    z-index: 9999 !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    background: linear-gradient(
-        135deg,
-        #55483e,
-        #7b654e,
-        #b89a63
-    ) !important;
-
-    pointer-events: auto !important;
-}
-
-.opening-content {
-    position: relative !important;
-
-    z-index: 10000 !important;
-
-    text-align: center !important;
-
-    pointer-events: auto !important;
-}
-
-#openBtn {
-    position: relative !important;
-
-    z-index: 10001 !important;
-
-    pointer-events: auto !important;
-
-    cursor: pointer !important;
-
-    touch-action: manipulation !important;
 }
