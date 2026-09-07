@@ -1,1111 +1,955 @@
 /* =========================
-   RESET
+RESET
 ========================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
 /* =========================
-   VARIABLE WARNA
+WARNA & DASAR
 ========================= */
 
-:root{
-
-    --ivory:#f7f1e8;
-
-    --beige:#ece1d2;
-
-    --brown:#55483e;
-
-    --dark:#302a25;
-
-    --gold:#b89a63;
-
-    --line:rgba(85,72,62,.18);
-
+:root {
+    --ivory: #f7f1e8;
+    --beige: #ece1d2;
+    --brown: #55483e;
+    --gold: #b89a63;
+    --dark: #302a25;
+    --line: rgba(85, 72, 62, 0.2);
 }
 
-
-/* =========================
-   DASAR
-========================= */
-
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-
-body{
-
-    font-family:"Montserrat",Arial,sans-serif;
-
-    background:var(--ivory);
-
-    color:var(--brown);
-
-    line-height:1.8;
-
+body {
+    font-family: "Montserrat", Arial, sans-serif;
+    color: var(--brown);
+    background: var(--ivory);
+    line-height: 1.8;
 }
 
-
-body.locked{
-
-    overflow:hidden;
-
+body.locked {
+    overflow: hidden;
 }
-
 
 h1,
 h2,
-h3{
-
-    font-family:"Cormorant Garamond",Georgia,serif;
-
-    font-weight:500;
-
-    line-height:1.2;
-
+h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    line-height: 1.2;
 }
-
 
 button,
-a{
-
-    font-family:inherit;
-
+a {
+    font: inherit;
 }
 
-
-button{
-
-    cursor:pointer;
-
-}
-
-
-img{
-
-    max-width:100%;
-
+button {
+    cursor: pointer;
 }
 
 
 /* =========================
-   CONTAINER
+CONTAINER
 ========================= */
 
-.container{
-
-    width:min(1100px,90%);
-
-    margin:auto;
-
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
 }
 
-
-.narrow{
-
-    max-width:760px;
-
+.narrow {
+    max-width: 760px;
 }
 
 
 /* =========================
-   BACKGROUND
+WARNA SECTION
 ========================= */
 
-.paper{
-
-    background:var(--ivory);
-
+.paper {
+    background: var(--ivory);
 }
 
-
-.beige{
-
-    background:var(--beige);
-
+.beige {
+    background: var(--beige);
 }
 
 
 /* =========================
-   OPENING
+JUDUL SECTION
 ========================= */
 
-.opening{
+.eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--gold);
+}
 
-    position:fixed;
+.section-title {
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-    inset:0;
+.lead {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+    font-size: 0.92rem;
+    font-weight: 300;
+}
 
-    z-index:9999;
 
-    display:flex;
+/* =========================
+ORNAMEN GARIS
+========================= */
 
-    justify-content:center;
+.jawa-line {
+    width: 100px;
+    height: 1px;
+    background: var(--gold);
+    margin: 30px auto;
+    position: relative;
+}
 
-    align-items:center;
+.jawa-line::after {
+    content: "✦";
+    position: absolute;
 
-    text-align:center;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: var(--ivory);
+
+    padding: 0 10px;
+
+    color: var(--gold);
+}
+
+
+/* =========================
+COVER PEMBUKA
+========================= */
+
+.opening {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9998;
 
     background:
-    linear-gradient(
-        135deg,
-        #40352d,
-        #715d4b,
-        #b89a63
-    );
+        radial-gradient(
+            circle at top,
+            #6d5b4d,
+            #302a25 75%
+        );
 
-    color:white;
+    display: flex;
 
-}
+    justify-content: center;
+    align-items: center;
 
+    text-align: center;
 
-.opening-content{
-
-    position:relative;
-
-    width:min(600px,90%);
-
-    padding:30px;
-
-}
-
-
-.opening h1{
-
-    font-size:clamp(
-        3.5rem,
-        12vw,
-        6rem
-    );
-
-    margin:25px 0;
-
-}
-
-
-.opening h1 span{
-
-    display:block;
-
-    font-size:.65em;
-
-}
-
-
-.opening-date{
-
-    font-size:.75rem;
-
-    letter-spacing:.18em;
-
-    margin-bottom:30px;
-
-}
-
-
-/* =========================
-   TEXT
-========================= */
-
-.eyebrow{
-
-    font-size:.68rem;
-
-    letter-spacing:.25em;
-
-    text-transform:uppercase;
-
-    margin-bottom:15px;
-
-}
-
-
-.guest-label{
-
-    margin-top:30px;
-
-    font-size:.7rem;
-
-    letter-spacing:.15em;
-
-}
-
-
-#guestName{
-
-    font-size:1.8rem;
-
-    margin-top:5px;
-
-}
-
-
-.gold-text{
-
-    color:#e4c27e;
-
-}
-
-
-.section-title{
-
-    font-size:clamp(
-        2.5rem,
-        7vw,
-        4.5rem
-    );
-
-    text-align:center;
-
-    margin-bottom:20px;
-
-}
-
-
-.lead{
-
-    max-width:650px;
-
-    margin:auto;
-
-    font-size:.9rem;
-
-    font-weight:300;
-
-    text-align:center;
-
-}
-
-
-/* =========================
-   LINE ORNAMENT
-========================= */
-
-.jawa-line{
-
-    width:90px;
-
-    height:1px;
-
-    background:var(--gold);
-
-    margin:35px auto;
-
-    position:relative;
-
-}
-
-
-.jawa-line::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    left:50%;
-
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    background:var(--ivory);
-
-    padding:0 10px;
-
-    color:var(--gold);
-
-}
-
-
-/* =========================
-   BUTTON
-========================= */
-
-.gold-btn{
-
-    position:relative;
-
-    z-index:10000;
-
-    border:1px solid var(--gold);
-
-    background:var(--gold);
-
-    color:white;
-
-    padding:15px 28px;
-
-    border-radius:30px;
-
-    font-size:.7rem;
-
-    letter-spacing:.13em;
-
-    cursor:pointer;
-
-    touch-action:manipulation;
-
-}
-
-
-.gold-btn:active{
-
-    transform:scale(.96);
-
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    background:
-
-    linear-gradient(
-        rgba(48,42,37,.65),
-        rgba(48,42,37,.75)
-    ),
-
-    url("foto1.JPG")
-    center/cover;
-
-    color:white;
-
-    padding:40px 20px;
-
-}
-
-
-.hero-content{
-
-    max-width:900px;
-
-}
-
-
-.hero h1{
-
-    font-size:clamp(
-        3rem,
-        9vw,
-        6.5rem
-    );
-
-    margin:20px 0;
-
-}
-
-
-.hero-and{
-
-    display:block;
-
-    color:#e4c27e;
-
-    font-size:.7em;
-
-    margin:10px 0;
-
-}
-
-
-.hero-date{
-
-    letter-spacing:.16em;
-
-    font-size:.75rem;
-
-}
-
-
-/* =========================
-   SECTION
-========================= */
-
-.intro,
-.couple-section,
-.countdown,
-.event-section,
-.gallery,
-.story,
-.gift,
-.rsvp,
-.closing{
-
-    padding:90px 20px;
-
-}
-
-
-/* =========================
-   COUPLE
-========================= */
-
-.couple-section{
-
-    text-align:center;
-
-}
-
-
-.person{
-
-    margin:55px auto;
-
-}
-
-
-.person-photo{
-
-    width:min(340px,100%);
-
-    aspect-ratio:3/4;
-
-    margin:auto;
-
-    overflow:hidden;
-
-    border-radius:180px 180px 0 0;
-
-}
-
-
-.person-photo img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-
-.person-label{
-
-    margin-top:20px;
-
-    font-size:.65rem;
-
-    letter-spacing:.2em;
-
-}
-
-
-.person-name{
-
-    font-size:2.3rem;
-
-    margin:10px 0;
-
-}
-
-
-.person-parent{
-
-    font-size:.85rem;
-
-}
-
-
-.ampersand{
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:4rem;
-
-    color:var(--gold);
-
-}
-
-
-/* =========================
-   COUNTDOWN
-========================= */
-
-.countdown{
-
-    text-align:center;
-
-}
-
-
-.count-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:10px;
-
-    max-width:700px;
-
-    margin:35px auto 0;
-
-}
-
-
-.count-grid div{
-
-    border:1px solid var(--line);
-
-    padding:20px 5px;
-
-}
-
-
-.count-grid strong{
-
-    display:block;
-
-    font-family:
-    "Cormorant Garamond",serif;
-
-    font-size:2.8rem;
-
-    font-weight:500;
-
-}
-
-
-.count-grid span{
-
-    font-size:.6rem;
-
-    text-transform:uppercase;
-
-    letter-spacing:.1em;
-
-}
-
-
-/* =========================
-   EVENT
-========================= */
-
-.event-section{
-
-    text-align:center;
-
-}
-
-
-.event-card{
-
-    border:1px solid var(--line);
-
-    padding:40px 25px;
-
-    margin-top:30px;
-
-    background:
-    rgba(255,255,255,.2);
-
-}
-
-
-.event-number{
-
-    color:var(--gold);
-
-    font-size:.7rem;
-
-    letter-spacing:.3em;
-
-}
-
-
-.event-card h3{
-
-    font-size:2.4rem;
-
-    margin:10px 0 30px;
-
-}
-
-
-.event-detail{
-
-    display:flex;
-
-    gap:15px;
-
-    text-align:left;
-
-    margin:25px 0;
-
-}
-
-
-.event-icon{
-
-    font-size:1.2rem;
-
-}
-
-
-.event-detail p{
-
-    font-size:.82rem;
-
-    margin-top:5px;
-
-}
-
-
-.event-divider{
-
-    margin:35px 0;
-
-    color:var(--gold);
-
-    font-size:1.5rem;
-
-}
-
-
-.outline-btn{
-
-    display:inline-block;
-
-    border:1px solid var(--gold);
-
-    color:var(--brown);
-
-    padding:13px 25px;
-
-    border-radius:30px;
-
-    text-decoration:none;
-
-    font-size:.7rem;
-
-    letter-spacing:.1em;
-
-    margin-top:15px;
-
-}
-
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery{
-
-    text-align:center;
-
-}
-
-
-.gallery-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:12px;
-
-}
-
-
-.gallery-grid img{
-
-    width:100%;
-
-    aspect-ratio:1/1.2;
-
-    object-fit:cover;
-
-    cursor:pointer;
-
-}
-
-
-/* =========================
-   LIGHTBOX
-========================= */
-
-#lightbox{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:10000;
-
-    background:
-    rgba(0,0,0,.9);
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:20px;
-
-}
-
-
-#lightbox img{
-
-    max-width:90%;
-
-    max-height:85vh;
-
-}
-
-
-#lightbox span{
-
-    position:absolute;
-
-    right:25px;
-
-    top:15px;
-
-    color:white;
-
-    font-size:3rem;
-
-    cursor:pointer;
-
-}
-
-
-/* =========================
-   STORY
-========================= */
-
-.story{
-
-    text-align:center;
-
-}
-
-
-.story-item{
-
-    padding:30px 20px;
-
-    border-bottom:
-
-    1px solid var(--line);
-
-}
-
-
-.story-item span{
-
-    color:var(--gold);
-
-    font-size:.7rem;
-
-    letter-spacing:.2em;
-
-}
-
-
-.story-item h3{
-
-    font-size:2rem;
-
-    margin:10px 0;
-
-}
-
-
-.story-item p{
-
-    font-size:.85rem;
-
-}
-
-
-/* =========================
-   GIFT
-========================= */
-
-.gift{
-
-    text-align:center;
-
-}
-
-
-.bank-card{
-
-    border:1px solid var(--line);
-
-    padding:28px;
-
-    margin:20px auto;
-
-    max-width:450px;
-
-}
-
-
-.bank-card h3{
-
-    font-size:2rem;
-
-}
-
-
-.bank-card strong{
-
-    display:block;
-
-    font-size:1.1rem;
-
-    letter-spacing:.08em;
-
-    margin:10px 0;
-
-}
-
-
-.bank-card button{
-
-    margin-top:15px;
-
-    padding:10px 20px;
-
-    border:1px solid var(--gold);
-
-    background:transparent;
-
-    color:var(--brown);
-
-    border-radius:20px;
-
-    font-size:.65rem;
-
-    letter-spacing:.1em;
-
-}
-
-
-/* =========================
-   RSVP
-========================= */
-
-.rsvp{
-
-    text-align:center;
-
-}
-
-
-.rsvp-btn{
-
-    display:inline-block;
-
-    margin-top:30px;
-
-    background:var(--gold);
-
-    color:white;
-
-    padding:15px 25px;
-
-    text-decoration:none;
-
-    border-radius:30px;
-
-    font-size:.7rem;
-
-    letter-spacing:.1em;
-
-}
-
-
-.contact-text{
-
-    margin-top:40px;
-
-    font-size:.8rem;
-
-}
-
-
-.contact{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
-    margin-top:15px;
-
-}
-
-
-.contact a{
-
-    color:var(--brown);
-
-    text-decoration:none;
-
-    font-size:.85rem;
-
-}
-
-
-/* =========================
-   CLOSING
-========================= */
-
-.closing{
-
-    text-align:center;
-
-    min-height:70vh;
-
-    display:flex;
-
-    align-items:center;
-
-}
-
-
-.closing-name{
-
-    font-family:
-    "Cormorant Garamond",serif;
-
-    font-size:clamp(
-        2.5rem,
-        8vw,
-        5rem
-    );
-
-    margin-top:35px;
-
-}
-
-
-/* =========================
-   MUSIC BUTTON
-========================= */
-
-#musicBtn{
-
-    position:fixed;
-
-    right:20px;
-
-    bottom:20px;
-
-    z-index:5000;
-
-    width:45px;
-
-    height:45px;
-
-    border-radius:50%;
-
-    border:1px solid var(--gold);
-
-    background:var(--ivory);
-
-    color:var(--brown);
-
-    display:none;
-
-}
-
-
-/* =========================
-   ANIMATION
-========================= */
-
-.reveal{
-
-    opacity:0;
-
-    transform:translateY(30px);
+    color: white;
 
     transition:
-
-    opacity .8s ease,
-
-    transform .8s ease;
-
+        opacity 0.7s ease,
+        visibility 0.7s ease;
 }
 
+.opening.hide {
+    opacity: 0;
+    visibility: hidden;
+}
 
-.reveal.visible{
+.opening-content {
+    width: 90%;
+    max-width: 600px;
 
-    opacity:1;
+    padding: 30px 20px;
+}
 
-    transform:translateY(0);
+.opening .eyebrow {
+    color: #e4c891;
+}
 
+.guest-label {
+    margin-top: 30px;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.8;
+}
+
+#guestName {
+    margin-top: 5px;
+
+    font-size: 1.8rem;
+
+    color: #e4c891;
+}
+
+.opening h1 {
+    font-size: clamp(3.5rem, 12vw, 6rem);
+
+    margin-top: 30px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+}
+
+.gold-text {
+    color: var(--gold);
+}
+
+.opening-date {
+    margin-top: 20px;
+
+    letter-spacing: 0.2em;
+
+    font-size: 0.8rem;
 }
 
 
 /* =========================
-   MOBILE
+TOMBOL BUKA UNDANGAN
 ========================= */
 
-@media(max-width:600px){
+.gold-btn {
+    display: inline-block;
 
-    .intro,
+    margin-top: 30px;
+
+    padding: 14px 28px;
+
+    border-radius: 40px;
+
+    border: 1px solid var(--gold);
+
+    background: var(--gold);
+
+    color: white;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+
+    transition: 0.3s;
+}
+
+.gold-btn:hover {
+    transform: translateY(-2px);
+
+    background: #9f814e;
+}
+
+
+/* =========================
+TOMBOL MUSIK
+========================= */
+
+#musicBtn {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: white;
+
+    font-size: 22px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.2);
+
+    transition: 0.3s;
+}
+
+#musicBtn:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #55483e,
+            #302a25
+        );
+
+    color: white;
+}
+
+.hero h1 {
+    font-size:
+        clamp(
+            2.8rem,
+            9vw,
+            5rem
+        );
+
+    margin: 20px 0;
+}
+
+.hero-and {
+    display: block;
+
+    font-size: 0.7em;
+
+    color: var(--gold);
+
+    margin: 10px;
+}
+
+.hero-date {
+    font-size: 0.8rem;
+
+    letter-spacing: 0.2em;
+
+    color: #e4c891;
+}
+
+
+/* =========================
+MEMPELAI
+========================= */
+
+.couple-section {
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.person {
+    margin-top: 50px;
+}
+
+.person-photo {
+    width: min(300px, 90%);
+
+    aspect-ratio: 3 / 4;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border-radius: 200px 200px 10px 10px;
+
+    border: 1px solid var(--gold);
+}
+
+.person-photo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.person-label {
+    margin-top: 25px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    color: var(--gold);
+}
+
+.person-name {
+    font-size: clamp(2rem, 7vw, 3rem);
+
+    margin: 10px 0;
+}
+
+.person-parent {
+    max-width: 450px;
+
+    margin: auto;
+
+    font-size: 0.85rem;
+}
+
+.ampersand {
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 4rem;
+
+    color: var(--gold);
+
+    margin: 40px 0;
+}
+
+
+/* =========================
+COUNTDOWN
+========================= */
+
+.countdown {
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+#countdown {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    max-width: 700px;
+
+    margin: 40px auto 0;
+}
+
+#countdown div {
+    border: 1px solid var(--line);
+
+    padding: 20px 5px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
+}
+
+#countdown b {
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 2.8rem;
+
+    font-weight: 500;
+}
+
+#countdown span {
+    font-size: 0.65rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =========================
+ACARA
+========================= */
+
+.event-section {
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.event-card {
+    max-width: 650px;
+
+    margin: 40px auto;
+
+    padding: 45px 25px;
+
+    border:
+        1px solid var(--line);
+}
+
+.event-number {
+    color: var(--gold);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.2em;
+}
+
+.event-card h3 {
+    font-size: 2.5rem;
+
+    margin: 15px 0 30px;
+}
+
+.event-detail {
+    display: flex;
+
+    gap: 15px;
+
+    text-align: left;
+
+    margin: 25px 0;
+
+    align-items: flex-start;
+}
+
+.event-icon {
+    font-size: 1.3rem;
+}
+
+.event-detail p {
+    font-size: 0.85rem;
+
+    margin-top: 5px;
+}
+
+.outline-btn {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid var(--gold);
+
+    color: var(--brown);
+
+    text-decoration: none;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.1em;
+
+    transition: 0.3s;
+}
+
+.outline-btn:hover {
+    background: var(--gold);
+
+    color: white;
+}
+
+
+/* =========================
+GALERI
+========================= */
+
+.gallery {
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    max-width: 900px;
+
+    margin: 40px auto 0;
+}
+
+.gallery-grid img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1.2;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+
+/* =========================
+LIGHTBOX
+========================= */
+
+#lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.9
+        );
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+#lightbox.active {
+    display: flex;
+}
+
+#lightbox img {
+    max-width: 95%;
+
+    max-height: 90vh;
+}
+
+#lightbox span {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    color: white;
+
+    font-size: 3rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+CERITA
+========================= */
+
+.story {
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.story-item {
+    max-width: 600px;
+
+    margin: 45px auto;
+
+    padding-bottom: 35px;
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+.story-item span {
+    color: var(--gold);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.2em;
+}
+
+.story-item h3 {
+    font-size: 2rem;
+
+    margin: 10px 0;
+}
+
+.story-item p {
+    font-size: 0.9rem;
+
+    font-weight: 300;
+}
+
+
+/* =========================
+WEDDING GIFT
+========================= */
+
+.gift {
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.bank-card {
+    max-width: 500px;
+
+    margin: 20px auto;
+
+    padding: 30px;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
+}
+
+.bank-card h3 {
+    font-size: 2rem;
+}
+
+.bank-card b {
+    display: block;
+
+    margin: 10px 0;
+
+    font-size: 1.3rem;
+
+    letter-spacing: 0.08em;
+}
+
+.bank-card button {
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    border:
+        1px solid var(--gold);
+
+    background: transparent;
+
+    color: var(--brown);
+
+    border-radius: 25px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =========================
+RSVP
+========================= */
+
+.rsvp {
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.rsvp-btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    background: var(--gold);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.1em;
+}
+
+.contact-text {
+    margin-top: 40px;
+
+    font-size: 0.85rem;
+}
+
+.contact {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.contact a {
+    color: var(--brown);
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+PENUTUP
+========================= */
+
+.closing {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #55483e,
+            #302a25
+        );
+
+    color: white;
+}
+
+.closing h2 {
+    font-size:
+        clamp(
+            2.2rem,
+            7vw,
+            4rem
+        );
+
+    margin: 20px 0;
+}
+
+.closing .lead {
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+}
+
+.closing-name {
+    margin-top: 40px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            2rem,
+            7vw,
+            3.5rem
+        );
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+ANIMASI SCROLL
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+RESPONSIVE HP
+========================= */
+
+@media (max-width: 700px) {
+
     .couple-section,
     .countdown,
     .event-section,
     .gallery,
     .story,
     .gift,
-    .rsvp,
-    .closing{
-
-        padding:75px 18px;
-
+    .rsvp {
+        padding:
+            80px 18px;
     }
 
-
-    .count-grid{
-
-        gap:6px;
-
+    #countdown {
+        gap: 6px;
     }
 
-
-    .count-grid strong{
-
-        font-size:2rem;
-
+    #countdown b {
+        font-size: 2rem;
     }
 
+    #countdown div {
+        padding: 15px 3px;
+    }
 
-    .count-grid div{
+    .event-card {
+        padding:
+            35px 20px;
+    }
 
-        padding:15px 2px;
-
+    .gallery-grid {
+        gap: 8px;
     }
 
 }
