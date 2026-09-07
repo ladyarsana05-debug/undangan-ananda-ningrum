@@ -1,16 +1,16 @@
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 :root{
-    --ivory:#f7f3ed;
-    --beige:#ece4d8;
-    --brown:#514b45;
-    --gold:#b79a63;
-    --gold-dark:#9f824d;
-    --line:rgba(120,100,70,.22);
+    --ivory:#f7f1e8;
+    --beige:#ece1d2;
+    --brown:#55483e;
+    --gold:#b89a63;
+    --dark:#302a25;
+    --line:rgba(85,72,62,.18);
 }
 
 html{
@@ -18,7 +18,7 @@ html{
 }
 
 body{
-    font-family:'Montserrat',Arial,sans-serif;
+    font-family:"Montserrat",Arial,sans-serif;
     color:var(--brown);
     background:var(--ivory);
     line-height:1.7;
@@ -28,195 +28,33 @@ body.locked{
     overflow:hidden;
 }
 
-h1,
-h2,
-h3{
-    font-family:'Cormorant Garamond',serif;
+h1,h2,h3{
+    font-family:"Cormorant Garamond",Georgia,serif;
     font-weight:500;
 }
 
 button,
 a{
-    font-family:inherit;
+    font:inherit;
 }
 
-/* =========================
-OPENING
-========================= */
-
-.opening{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-        rgba(247,243,237,.88),
-        rgba(247,243,237,.88)
-    );
-
-    color:var(--brown);
-}
-
-.opening-content{
-    width:90%;
-    max-width:600px;
-    padding:30px 20px;
-}
-
-.eyebrow{
-    font-size:11px;
-    letter-spacing:7px;
-    color:var(--gold-dark);
-    margin-bottom:20px;
-}
-
-.guest-label{
-    margin-top:35px;
-    margin-bottom:5px;
-
-    font-size:12px;
-    letter-spacing:5px;
-
-    color:var(--gold-dark);
-}
-
-#guestName{
-    font-size:28px;
-    margin-bottom:30px;
-}
-
-.opening h1{
-    font-size:clamp(55px,13vw,100px);
-    line-height:1;
-    color:var(--brown);
-}
-
-.gold-text{
-    color:var(--gold);
-}
-
-.opening-date{
-    margin-top:25px;
-
-    font-size:14px;
-    letter-spacing:6px;
-
-    color:var(--gold-dark);
-}
-
-.gold-btn{
-    margin-top:45px;
-
-    padding:18px 42px;
-
-    border:none;
-
-    background:var(--gold);
-
-    color:white;
-
-    letter-spacing:4px;
-
-    font-size:13px;
-
+button{
     cursor:pointer;
-
-    transition:.3s;
 }
 
-.gold-btn:hover{
-    transform:scale(1.03);
-}
 
-/* MUSIC */
-
-#musicBtn{
-    position:fixed;
-
-    top:20px;
-    left:20px;
-
-    z-index:10000;
-
-    width:50px;
-    height:50px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(255,255,255,.6);
-
-    background:rgba(255,255,255,.35);
-
-    color:#b79a63;
-
-    font-size:22px;
-}
-
-/* =========================
-HERO
-========================= */
-
-.hero{
-    min-height:100vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    background:var(--ivory);
-}
+/* =====================
+CONTAINER
+===================== */
 
 .container{
-    width:90%;
-    max-width:1100px;
-
+    width:min(1100px,90%);
     margin:auto;
 }
 
 .narrow{
     max-width:760px;
 }
-
-.hero h1{
-    font-size:clamp(42px,8vw,80px);
-
-    line-height:1.05;
-
-    margin:25px auto;
-
-    max-width:900px;
-}
-
-.hero-and{
-    display:block;
-
-    color:var(--gold);
-
-    font-size:.8em;
-
-    margin:8px 0;
-}
-
-.hero-date{
-    font-size:13px;
-
-    letter-spacing:5px;
-
-    color:var(--gold-dark);
-}
-
-/* =========================
-SECTION
-========================= */
 
 .paper{
     background:var(--ivory);
@@ -226,143 +64,319 @@ SECTION
     background:var(--beige);
 }
 
-.couple-section,
-.countdown,
-.event-section,
-.gallery,
-.story,
-.gift,
-.rsvp,
-.closing{
-    padding:90px 0;
 
-    text-align:center;
+/* =====================
+TEXT
+===================== */
+
+.eyebrow{
+    font-size:.7rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    margin-bottom:15px;
 }
 
 .section-title{
-    font-size:clamp(38px,7vw,60px);
-
-    margin-top:10px;
-
-    margin-bottom:25px;
+    font-size:clamp(2.4rem,7vw,4.5rem);
+    margin-bottom:20px;
 }
 
 .lead{
     max-width:650px;
-
     margin:auto;
-
-    font-size:14px;
-
+    font-size:.9rem;
     font-weight:300;
 }
+
+
+/* =====================
+ORNAMENT
+===================== */
 
 .jawa-line{
     width:90px;
     height:1px;
-
     background:var(--gold);
-
     margin:30px auto;
-
     position:relative;
 }
 
 .jawa-line:after{
     content:"✦";
-
     position:absolute;
-
-    top:50%;
     left:50%;
-
-    transform:translate(-50%,-50%);
-
+    top:50%;
+    transform:translate(-50%,-55%);
     background:var(--ivory);
-
-    padding:0 10px;
-
     color:var(--gold);
+    padding:0 10px;
 }
 
-/* =========================
+.beige .jawa-line:after{
+    background:var(--beige);
+}
+
+
+/* =====================
+BUTTON
+===================== */
+
+.gold-btn,
+.outline-btn,
+.rsvp-btn{
+    display:inline-block;
+    border-radius:40px;
+    padding:14px 28px;
+    letter-spacing:.14em;
+    font-size:.7rem;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.gold-btn{
+    border:none;
+    background:var(--gold);
+    color:white;
+}
+
+.outline-btn{
+    border:1px solid var(--gold);
+    color:var(--brown);
+    margin-top:20px;
+}
+
+.outline-btn:hover{
+    background:var(--gold);
+    color:white;
+}
+
+.rsvp-btn{
+    background:var(--gold);
+    color:white;
+    margin-top:20px;
+}
+
+
+/* =====================
+MUSIC
+===================== */
+
+#musicBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:90;
+
+    width:48px;
+    height:48px;
+
+    border:none;
+    border-radius:50%;
+
+    background:var(--gold);
+    color:white;
+
+    font-size:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+
+/* =====================
+OPENING
+===================== */
+
+.opening{
+    position:fixed;
+    inset:0;
+
+    z-index:100;
+
+    background:
+    linear-gradient(
+        rgba(20,15,10,.35),
+        rgba(20,15,10,.55)
+    ),
+    url("cover.jpg") center/cover no-repeat;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+}
+
+.opening-content{
+    width:min(650px,90%);
+    padding:30px 20px;
+}
+
+.opening .eyebrow{
+    margin-bottom:25px;
+}
+
+.guest-label{
+    margin-top:20px;
+    font-size:.7rem;
+    letter-spacing:.18em;
+}
+
+#guestName{
+    font-size:1.5rem;
+    margin:8px 0 30px;
+}
+
+.opening h1{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(3rem,11vw,6rem);
+
+    line-height:1.05;
+
+    margin-bottom:20px;
+}
+
+.gold-text{
+    color:#e6c98c;
+}
+
+.opening-date{
+    letter-spacing:.25em;
+    font-size:.75rem;
+    margin-bottom:35px;
+}
+
+
+/* =====================
+HERO
+===================== */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        rgba(30,25,20,.45),
+        rgba(30,25,20,.65)
+    ),
+    url("cover.jpg") center/cover no-repeat;
+}
+
+.hero h1{
+    font-size:clamp(3rem,8vw,6rem);
+
+    max-width:900px;
+
+    margin:20px auto;
+}
+
+.hero-and{
+    display:block;
+
+    color:#e6c98c;
+
+    font-size:.8em;
+
+    margin:10px;
+}
+
+.hero-date{
+    letter-spacing:.25em;
+    font-size:.75rem;
+}
+
+
+/* =====================
 MEMPELAI
-========================= */
+===================== */
+
+.couple-section{
+    padding:100px 0;
+
+    text-align:center;
+}
 
 .person{
     margin:60px auto;
-
-    max-width:500px;
 }
 
 .person-photo{
-    width:100%;
-
-    max-width:350px;
+    width:min(350px,90%);
 
     margin:auto;
 
     overflow:hidden;
 
-    border-radius:180px 180px 0 0;
-
-    background:#ddd;
+    border-radius:200px 200px 0 0;
 }
 
 .person-photo img{
     width:100%;
 
-    height:auto;
-
     display:block;
-
-    object-fit:cover;
 }
 
 .person-label{
+    font-size:.65rem;
+
+    letter-spacing:.2em;
+
     margin-top:25px;
-
-    font-size:11px;
-
-    letter-spacing:5px;
-
-    color:var(--gold-dark);
 }
 
 .person-name{
-    margin:15px 0;
+    font-size:2.5rem;
 
-    font-size:clamp(35px,6vw,52px);
+    margin:15px 0;
 }
 
 .person-parent{
-    font-size:14px;
+    font-size:.85rem;
 
-    max-width:420px;
+    max-width:450px;
 
     margin:auto;
 }
 
 .ampersand{
-    font-family:'Cormorant Garamond',serif;
+    font-family:"Cormorant Garamond",serif;
 
-    font-size:70px;
+    font-size:4rem;
 
     color:var(--gold);
 
-    margin:30px 0;
+    margin:20px 0;
 }
 
-/* =========================
+
+/* =====================
 COUNTDOWN
-========================= */
+===================== */
+
+.countdown{
+    padding:100px 0;
+
+    text-align:center;
+}
 
 #countdown{
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:10px;
+    gap:12px;
 
     max-width:700px;
 
@@ -370,53 +384,56 @@ COUNTDOWN
 }
 
 #countdown div{
-    padding:20px 5px;
-
     border:1px solid var(--line);
+
+    padding:20px 8px;
 }
 
 #countdown b{
     display:block;
 
-    font-family:'Cormorant Garamond',serif;
+    font-family:"Cormorant Garamond",serif;
 
-    font-size:45px;
+    font-size:3rem;
 
     font-weight:500;
 }
 
 #countdown span{
-    font-size:10px;
+    font-size:.65rem;
 
     text-transform:uppercase;
 
-    letter-spacing:2px;
+    letter-spacing:.1em;
 }
 
-/* =========================
+
+/* =====================
 EVENT
-========================= */
+===================== */
+
+.event-section{
+    padding:100px 0;
+
+    text-align:center;
+}
 
 .event-card{
+    padding:45px 20px;
+
     border:1px solid var(--line);
-
-    padding:45px 25px;
-
-    margin:35px auto;
-
-    max-width:600px;
 }
 
 .event-number{
     color:var(--gold);
 
-    letter-spacing:5px;
+    font-size:.8rem;
 
-    font-size:12px;
+    letter-spacing:.2em;
 }
 
 .event-card h3{
-    font-size:42px;
+    font-size:2.5rem;
 
     margin:15px 0 30px;
 }
@@ -424,58 +441,43 @@ EVENT
 .event-detail{
     display:flex;
 
+    align-items:flex-start;
+
     gap:15px;
 
     text-align:left;
 
-    margin:20px 0;
+    margin:20px auto;
 
-    align-items:flex-start;
+    max-width:400px;
 }
 
 .event-icon{
-    font-size:20px;
-}
-
-.event-detail strong{
-    font-size:15px;
+    font-size:1.3rem;
 }
 
 .event-detail p{
-    margin-top:4px;
-
-    font-size:13px;
-}
-
-.outline-btn{
-    display:inline-block;
-
-    margin-top:20px;
-
-    padding:14px 25px;
-
-    border:1px solid var(--gold);
-
-    text-decoration:none;
-
-    color:var(--brown);
-
-    letter-spacing:2px;
-
-    font-size:11px;
+    font-size:.85rem;
 }
 
 .event-divider{
-    color:var(--gold);
+    font-size:2rem;
 
-    font-size:30px;
+    color:var(--gold);
 
     margin:40px 0;
 }
 
-/* =========================
-GALERI
-========================= */
+
+/* =====================
+GALLERY
+===================== */
+
+.gallery{
+    padding:100px 0;
+
+    text-align:center;
+}
 
 .gallery-grid{
     display:grid;
@@ -499,9 +501,10 @@ GALERI
     display:block;
 }
 
-/* =========================
+
+/* =====================
 LIGHTBOX
-========================= */
+===================== */
 
 #lightbox{
     display:none;
@@ -510,21 +513,23 @@ LIGHTBOX
 
     inset:0;
 
-    z-index:99999;
-
     background:rgba(0,0,0,.9);
 
-    align-items:center;
+    z-index:200;
 
     justify-content:center;
 
-    padding:20px;
+    align-items:center;
+}
+
+#lightbox.active{
+    display:flex;
 }
 
 #lightbox img{
-    max-width:100%;
+    max-width:90%;
 
-    max-height:90vh;
+    max-height:85%;
 }
 
 #lightbox span{
@@ -541,70 +546,80 @@ LIGHTBOX
     cursor:pointer;
 }
 
-/* =========================
-OUR STORY
-========================= */
+
+/* =====================
+STORY
+===================== */
+
+.story{
+    padding:100px 0;
+
+    text-align:center;
+}
 
 .story-item{
-    margin:50px auto;
+    padding:35px 0;
 
-    max-width:600px;
+    border-bottom:1px solid var(--line);
 }
 
 .story-item span{
     color:var(--gold);
 
-    font-size:13px;
-
-    letter-spacing:4px;
+    letter-spacing:.2em;
 }
 
 .story-item h3{
-    font-size:35px;
+    font-size:2rem;
 
-    margin:12px 0;
+    margin:10px 0;
 }
 
 .story-item p{
-    font-size:14px;
+    font-size:.9rem;
 
     font-weight:300;
 }
 
-/* =========================
+
+/* =====================
 GIFT
-========================= */
+===================== */
+
+.gift{
+    padding:100px 0;
+
+    text-align:center;
+}
 
 .bank-card{
-    border:1px solid var(--line);
-
     max-width:450px;
 
-    margin:25px auto;
+    margin:20px auto;
 
     padding:30px 20px;
+
+    border:1px solid var(--line);
 }
 
 .bank-card h3{
-    font-size:30px;
+    font-size:2rem;
 }
 
 .bank-card b{
     display:block;
 
-    font-size:22px;
+    font-size:1.2rem;
 
-    letter-spacing:2px;
+    letter-spacing:.08em;
 
-    margin:15px 0;
-}
-
-.bank-card p{
-    font-size:14px;
+    margin:10px 0;
 }
 
 .bank-card button{
     margin-top:15px;
+
+    padding:10px 20px;
 
     border:none;
 
@@ -612,39 +627,28 @@ GIFT
 
     color:white;
 
-    padding:12px 20px;
+    border-radius:30px;
 
-    letter-spacing:2px;
+    font-size:.65rem;
 
-    font-size:10px;
+    letter-spacing:.12em;
 }
 
-/* =========================
+
+/* =====================
 RSVP
-========================= */
+===================== */
 
-.rsvp-btn{
-    display:inline-block;
+.rsvp{
+    padding:100px 0;
 
-    margin-top:30px;
-
-    padding:16px 25px;
-
-    background:var(--gold);
-
-    color:white;
-
-    text-decoration:none;
-
-    font-size:12px;
-
-    letter-spacing:2px;
+    text-align:center;
 }
 
 .contact-text{
     margin-top:40px;
 
-    font-size:14px;
+    font-size:.85rem;
 }
 
 .contact{
@@ -652,9 +656,9 @@ RSVP
 
     flex-direction:column;
 
-    gap:15px;
+    gap:12px;
 
-    margin-top:20px;
+    margin-top:15px;
 }
 
 .contact a{
@@ -662,15 +666,20 @@ RSVP
 
     text-decoration:none;
 
-    font-size:14px;
+    font-size:.9rem;
 }
 
-/* =========================
+
+/* =====================
 CLOSING
-========================= */
+===================== */
 
 .closing{
-    min-height:100vh;
+    padding:100px 0;
+
+    text-align:center;
+
+    min-height:80vh;
 
     display:flex;
 
@@ -680,31 +689,34 @@ CLOSING
 }
 
 .closing h2{
-    font-size:clamp(35px,6vw,55px);
+    font-size:clamp(2.5rem,7vw,4.5rem);
 
     margin:20px 0;
 }
 
 .closing-name{
-    font-family:'Cormorant Garamond',serif;
+    font-family:"Cormorant Garamond",serif;
 
-    font-size:clamp(45px,8vw,70px);
+    font-size:clamp(2.5rem,7vw,5rem);
 
     line-height:1.1;
 
     margin-top:40px;
 }
 
-/* =========================
+
+/* =====================
 ANIMATION
-========================= */
+===================== */
 
 .reveal{
     opacity:0;
 
     transform:translateY(25px);
 
-    transition:all .8s ease;
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
 }
 
 .reveal.visible{
@@ -713,11 +725,16 @@ ANIMATION
     transform:translateY(0);
 }
 
-/* =========================
+
+/* =====================
 MOBILE
-========================= */
+===================== */
 
 @media(max-width:600px){
+
+    .container{
+        width:90%;
+    }
 
     .couple-section,
     .countdown,
@@ -731,31 +748,19 @@ MOBILE
     }
 
     #countdown{
-        gap:6px;
-    }
-
-    #countdown div{
-        padding:14px 2px;
+        grid-template-columns:repeat(2,1fr);
     }
 
     #countdown b{
-        font-size:32px;
+        font-size:2.5rem;
     }
 
-    #countdown span{
-        font-size:8px;
+    .gallery-grid{
+        gap:8px;
     }
 
-    .event-card{
-        padding:35px 20px;
-    }
-
-    .event-card h3{
-        font-size:36px;
-    }
-
-    .opening h1{
-        font-size:65px;
+    .person-name{
+        font-size:2.2rem;
     }
 
 }
