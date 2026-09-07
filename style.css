@@ -205,8 +205,13 @@ OPENING
 }
 
 .opening-content{
-    width:min(650px,90%);
-    padding:30px 20px;
+    position:absolute;
+    bottom:50px;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    text-align:center;
+    z-index:2;
 }
 
 .opening .eyebrow{
