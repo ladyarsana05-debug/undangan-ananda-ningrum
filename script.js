@@ -1,37 +1,49 @@
-const music = document.getElementById("music");
-const musicBtn = document.getElementById("musicBtn");
+document.addEventListener("DOMContentLoaded", function () {
 
-/* =========================
-MUSIC
-========================= */
+    const openBtn = document.getElementById("openBtn");
+    const opening = document.getElementById("opening");
+    const music = document.getElementById("music");
+    const musicBtn = document.getElementById("musicBtn");
 
-if (music && musicBtn) {
 
-    musicBtn.style.display = "block";
+    if (openBtn) {
 
-    musicBtn.addEventListener("click", function () {
+        openBtn.addEventListener("click", function () {
 
-        if (music.paused) {
+            /* HILANGKAN COVER */
 
-            music.play()
-                .then(() => {
-                    musicBtn.innerHTML = "♫";
-                })
-                .catch((error) => {
-                    console.log("Musik tidak dapat diputar:", error);
-                });
+            opening.style.opacity = "0";
 
-        } else {
+            setTimeout(function () {
 
-            music.pause();
+                opening.style.display = "none";
 
-            musicBtn.innerHTML = "🔇";
+                document.body.classList.remove("locked");
 
-        }
+            }, 600);
 
-    });
 
-}
+            /* PUTAR MUSIK */
+
+            if (music) {
+
+                music.play()
+                    .then(function () {
+
+                        if (musicBtn) {
+                            musicBtn.style.display = "block";
+                        }
+
+                    })
+                    .catch(function (error) {
+
+                        console.log("Musik tidak dapat diputar:", error);
+
+                    });
+
+            }
+
+        });
 
 
 /* =========================
